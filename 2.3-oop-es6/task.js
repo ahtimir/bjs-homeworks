@@ -37,7 +37,7 @@ class Weapon {
     };
 };
 
-const hand = new Weapon({
+const arm = new Weapon({
     name: 'Рука', 
     attack: 1,
     durability: Infinity,
@@ -72,14 +72,14 @@ const staff = new Weapon({
     range: 2
 });
   
-const longbow = new Weapon({
+const longBow = new Weapon({
     name: 'Длинный лук', 
     attack: 15, 
     durability: bow.durability, 
     range: 4
 });
 
-const poleaxe = new Weapon({
+const axe = new Weapon({
     name: 'Секира', 
     attack: 27, 
     durability: 800, 
@@ -88,18 +88,18 @@ const poleaxe = new Weapon({
 
 const stormStaff = new Weapon({
     name: 'Посох бури', 
-    attack: 15, 
+    attack: 10, 
     durability: staff.durability, 
     range: 3
 });
 
-console.log(hand);
+console.log(arm);
 console.log(bow);
 console.log(sword);
 console.log(knife);
 console.log(staff);
-console.log(longbow);
-console.log(poleaxe);
+console.log(longBow);
+console.log(axe);
 console.log(stormStaff);
 
 // Задача 2
@@ -147,7 +147,7 @@ class Staff extends Weapon {
     };
 };
 
-class Hand extends Weapon {
+class Arm extends Weapon {
     constructor() {
         super({
             name: 'Рука', 
@@ -162,11 +162,11 @@ const genericBow = new Bow();
 const genericSword = new Sword();
 const genericKnife = new Knife();
 const genericStaff = new Staff();
-const bareHands = new Hand();
+const bareHands = new Arm();
 console.log(genericBow.name);
 console.log(bareHands.isBroken());
   
-class Longbow extends Bow {
+class LongBow extends Bow {
     constructor() {
         super({
             name: 'Лук', 
@@ -181,7 +181,7 @@ class Longbow extends Bow {
     };
 };
 
-class Poleaxe extends Sword {
+class Axe extends Sword {
     constructor() {
         super({
             name: 'Меч', 
@@ -196,7 +196,7 @@ class Poleaxe extends Sword {
     };
 };
 
-class Stormstaff extends Staff {
+class StormStaff extends Staff {
     constructor() {
         super({
             name: 'Посох', 
@@ -204,16 +204,16 @@ class Stormstaff extends Staff {
             durability: 300,
             range: 2
         });
-        this.name = 'Посох бури', 
-        this.attack = 15, 
+        this.name = 'Посох Бури', 
+        this.attack = 10, 
         this.durability = staff.durability, 
         this.range = 3
     };
 };
 
-const coolLongBow = new Longbow();
-const coolPoleaxe = new Poleaxe();
-const coolStormstaff = new Stormstaff();
+const coolLongBow = new LongBow();
+const coolPoleaxe = new Axe();
+const coolStormstaff = new StormStaff();
   
 console.log(coolLongBow.name);
 coolStormstaff.getDamage();
